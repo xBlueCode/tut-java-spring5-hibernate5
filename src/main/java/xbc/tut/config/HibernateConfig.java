@@ -83,6 +83,23 @@ public class HibernateConfig {
 //        AvailableSettings.CURRENT_SESSION_CONTEXT_CLASS,
 //        env.getProperty("hibernate.current.session.context.class"));
 
+    /* C3P0 Connection Pool Configuration */
+    hibernateProperties.setProperty(
+        AvailableSettings.C3P0_MIN_SIZE,
+        env.getProperty("hibernate.c3p0.min_size"));
+    hibernateProperties.setProperty(
+        AvailableSettings.C3P0_MAX_SIZE,
+        env.getProperty("hibernate.c3p0.max_size"));
+    hibernateProperties.setProperty(
+        AvailableSettings.C3P0_TIMEOUT,
+        env.getProperty("hibernate.c3p0.timeout"));
+    hibernateProperties.setProperty(
+        AvailableSettings.C3P0_MAX_STATEMENTS,
+        env.getProperty("hibernate.c3p0.max_statements"));
+    hibernateProperties.setProperty(
+        AvailableSettings.C3P0_IDLE_TEST_PERIOD,
+        env.getProperty("hibernate.c3p0.idle_test_period"));
+
     return hibernateProperties;
   }
 
